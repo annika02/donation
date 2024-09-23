@@ -2,7 +2,7 @@ function handleDonation(inputId, balanceId) {
     const addDonation = document.getElementById(inputId).value;
     const addDonationNumber = parseFloat(addDonation);
 
-    if (addDonationNumber > 0) {
+    if (!isNaN(addDonationNumber) && addDonationNumber > 0) {
         const amount = document.getElementById('amount').innerText;
         const amountNumber = parseFloat(amount);
 
@@ -41,6 +41,24 @@ document.getElementById('donation-button1').addEventListener('click', function()
 document.getElementById('donation-button2').addEventListener('click', function() {
     handleDonation('protestInput', 'qouta-donation');
 });
+
+// Toggle between Donation and History
+document.getElementById('donationTab').addEventListener('click', function() {
+    document.getElementById('donationSection').classList.remove('hidden');
+    document.getElementById('historySection').classList.add('hidden');
+});
+
+document.getElementById('historyTab').addEventListener('click', function() {
+    document.getElementById('donationSection').classList.add('hidden');
+    document.getElementById('historySection').classList.remove('hidden');
+});
+
+
+
+
+
+
+
 
 
 

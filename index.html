@@ -55,7 +55,7 @@
       <div class="bg-lining">
         <div class="flex items-center justify-between p-4">
           <!-- Blog Button -->
-          <button class="bg-primary text-black font-bold py-3 px-4 rounded-lg">
+          <button class="bg-primary text-black font-bold py-3 px-4 rounded-lg" onclick="location.href='./pages/blog.html';">
             Blog
           </button>
 
@@ -93,7 +93,7 @@
     </header>
     <main>
       <!-- donation cards start -->
-      <div id="donationSection" class="w-5/6 mx-auto mt-5 space-y-5">
+      <div id="donationSection" class="w-5/6 mx-auto mt-5 space-y-5 " >
         <!-- Donation Card 1 -->
         <div
           class="bg-white p-6 rounded-lg border flex flex-col lg:flex-row items-center"
@@ -228,6 +228,11 @@
       </div>
 
       <!-- donation card end -->
+      <div id="historySection" class="hidden w-5/6 mx-auto mt-5 space-y-5">
+        <h2 class="text-2xl font-bold text-black">Transaction History</h2>
+        <ul id="transactionList" class="list-disc pl-5 text-font1">
+        </ul>
+      </div>
     </main>
 
     <footer class="bg-[#F9F7F3] h-36 mt-24"></footer>
