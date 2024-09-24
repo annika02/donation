@@ -55,7 +55,7 @@
       <div class="bg-lining">
         <div class="flex items-center justify-between p-4">
           <!-- Blog Button -->
-          <button class="bg-primary text-black font-bold py-3 px-4 rounded-lg" onclick="location.href='./pages/blog.html';">
+          <button class="bg-primary text-black font-bold py-3 px-4 rounded-lg" id="blog">
             Blog
           </button>
 
@@ -232,7 +232,7 @@
 
 
       <!-- history start -->
-      <div id="history-section" >
+      <div id="history-section"class="hidden" >
         <h2 class="text-xl text-center pb-3">Donation History</h2>
         <div id="history" class="text-center space-y-4 ">
 
@@ -258,5 +258,6 @@
     </dialog>
 
     <script src="./js/index.js"></script>
+    <script src="./js/toggle.js"></script>
   </body>
 </html>
