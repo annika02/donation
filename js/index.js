@@ -22,8 +22,8 @@ function handleDonation(inputId, balanceId,description) {
         // history 
         const p = document.createElement('p');
         const d = new Date();
-        const formattedDate = d.toLocaleString();
-        p.innerText = `Donated ${addDonationNumber} Tk. for ${description}`;
+        const formattedDate = d.toLocaleDateString();
+        p.innerText = `Donated ${addDonationNumber} Tk. for ${description} on ${formattedDate}`;
         document.getElementById('history').append(p);
 
         // modal and clearing text field
@@ -50,7 +50,7 @@ document.getElementById('donation-button2').addEventListener('click', function()
     handleDonation('protestInput', 'qouta-donation','Quota Protest');
 });
 
-// swap
+// swap to blog
 document.getElementById('blog').addEventListener('click',function(){
     window.location.href = "./blog.html";
 })
