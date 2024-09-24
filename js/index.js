@@ -1,6 +1,6 @@
-function handleDonation(inputId, balanceId) {
+function handleDonation(inputId, balanceId,description) {
     const addDonation = document.getElementById(inputId).value;
-    const addDonationNumber = parseFloat(addDonation);
+    const addDonationNumber = Number(addDonation);
 
     if (!isNaN(addDonationNumber) && addDonationNumber > 0) {
         const amount = document.getElementById('amount').innerText;
@@ -19,6 +19,12 @@ function handleDonation(inputId, balanceId) {
         document.getElementById('amount').innerText = remainingBalance;
         document.getElementById(balanceId).innerText = newDonation;
 
+        // history 
+        const p = document.createElement('p');
+        p.innerText = `Donated ${addDonationNumber} Tk. for ${description}`;
+        document.getElementById('history').appendChild(p);
+
+        // modal and clearing text field
         document.getElementById('my_modal_5').showModal();
         document.getElementById(inputId).value = '';
     } else {
@@ -29,29 +35,31 @@ function handleDonation(inputId, balanceId) {
 
 // Noakhali donation
 document.getElementById('donation-button').addEventListener('click', function() {
-    handleDonation('noakhaliInput', 'noakhali-donation');
+    handleDonation('noakhaliInput', 'noakhali-donation','Noakhali Flood');
 });
 
 // Feni donation
 document.getElementById('donation-button1').addEventListener('click', function() {
-    handleDonation('feniInput', 'feni-donation');
+    handleDonation('feniInput', 'feni-donation','Feni Flood');
 });
 
 // Quota donation
 document.getElementById('donation-button2').addEventListener('click', function() {
-    handleDonation('protestInput', 'qouta-donation');
+    handleDonation('protestInput', 'qouta-donation','Quota Protest');
 });
 
-// Toggle between Donation and History
-document.getElementById('donationTab').addEventListener('click', function() {
-    document.getElementById('donationSection').classList.remove('hidden');
-    document.getElementById('historySection').classList.add('hidden');
-});
 
-document.getElementById('historyTab').addEventListener('click', function() {
-    document.getElementById('donationSection').classList.add('hidden');
-    document.getElementById('historySection').classList.remove('hidden');
-});
+
+// // Toggle between Donation and History
+// document.getElementById('donationTab').addEventListener('click', function() {
+//     document.getElementById('donationSection').classList.remove('hidden',);
+//     document.getElementById('historySection').classList.add('hidden');
+// });
+
+// document.getElementById('historyTab').addEventListener('click', function() {
+//     document.getElementById('donationSection').classList.add('hidden');
+//     document.getElementById('historySection').classList.remove('hidden');
+// });
 
 
 
