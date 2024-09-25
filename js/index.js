@@ -20,11 +20,15 @@ function handleDonation(inputId, balanceId,description) {
         document.getElementById(balanceId).innerText = newDonation;
 
         // history 
-        const p = document.createElement('p');
         const d = new Date();
         const formattedDate = d.toLocaleDateString();
-        p.innerText = `Donated ${addDonationNumber} Tk. for ${description} on ${formattedDate}`;
-        document.getElementById('history').append(p);
+        const div = document.createElement('div');
+        
+        div.innerHTML = `
+            <p class="font-bold">${addDonationNumber} Taka is Donated for ${description} on ${formattedDate}</p>
+            <p>Date : ${d} </p>`
+
+        document.getElementById('history').appendChild(div);
 
         // modal and clearing text field
         document.getElementById('my_modal_5').showModal();
